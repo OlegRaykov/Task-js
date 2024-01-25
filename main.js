@@ -5,6 +5,11 @@ const saveButton = document.getElementById('saveButton');
     dropdown.addEventListener('change', function() {
       inputText.value = dropdown.options[dropdown.selectedIndex].text;
     });
+
 saveButton.addEventListener('click', function() {
-dropdown.options[dropdown.selectedIndex].text = inputText.value;
-    });
+const selectedIndex = dropdown.selectedIndex;
+const inputValue = inputText.value.trim();
+if (inputValue !== '' && inputValue !== ' ') {
+dropdown.options[selectedIndex].text = inputValue;
+}
+});
